@@ -1,0 +1,78 @@
+/* 1. RESET: Removes default browser spacing */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 2. BASE STYLES: Clean, minimalist typography */
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: #fafafa;
+  color: #111;
+  line-height: 1.6;
+}
+
+/* 3. HEADER: Center the title and give it breathing room */
+.site-header {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.site-header h1 {
+  font-size: 2rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.site-header p {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* 4. MASONRY GALLERY: The core layout */
+.portfolio-gallery {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem 4rem 2rem;
+  
+  /* Creates 3 columns that images will flow into */
+  column-count: 3;
+  column-gap: 2rem;
+}
+
+/* 5. IMAGE BLOCKS: Keeps images from breaking across columns */
+.gallery-item {
+  break-inside: avoid; /* Prevents an image from being split in half */
+  margin-bottom: 2rem; /* Spacing below each image */
+  position: relative;
+}
+
+.gallery-item img {
+  width: 100%; /* Makes image fill the column width */
+  height: auto; /* Maintains aspect ratio */
+  display: block;
+}
+
+/* Optional: Minimalist caption that appears under the image */
+.caption {
+  font-size: 0.8rem;
+  color: #777;
+  margin-top: 0.5rem;
+}
+
+/* 6. RESPONSIVENESS: Shrinks columns on smaller screens */
+@media (max-width: 900px) {
+  .portfolio-gallery {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .portfolio-gallery {
+    column-count: 1; /* Stacks images in a single column on phones */
+    padding: 0 1rem 2rem 1rem;
+  }
+}
